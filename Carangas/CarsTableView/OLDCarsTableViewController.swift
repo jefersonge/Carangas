@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CarsTableViewController: UITableViewController {
+class OLDCarsTableViewController: UITableViewController {
     
     //MARK: - Variables
-    var viewModel = CarsTableViewModel()
+    var viewModel = CarsListViewModel()
     var indexPathArray : [IndexPath] = []
     
     //MARK: - Label Loading
@@ -27,19 +27,17 @@ class CarsTableViewController: UITableViewController {
         super.viewDidLoad()
         label.text = "Carregando carros..."
         viewModel.delegate = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.loadCars()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewSegue" {
             //segue ao clicar em um carro
-            let vc = segue.destination as! CarViewController
+            let vc = segue.destination as! OLDCarViewController
             vc.car = viewModel.loadCarUnity(indexPatchRow: tableView.indexPathForSelectedRow!.row)
         }
     }
@@ -69,7 +67,7 @@ class CarsTableViewController: UITableViewController {
     }
 }
 //MARK: - ExtensionViewModelDelegate
-extension CarsTableViewController: CarsTableViewModelDelegate {
+extension OLDCarsTableViewController: CarsListViewModelDelegate {
 
     func deleteRowCar() {
         self.tableView.deleteRows(at: indexPathArray, with: .fade)

@@ -11,7 +11,7 @@ import Foundation
 import WebKit
 
 
-class CarViewController: UIViewController {
+class OLDCarViewController: UIViewController {
 
     enum url {
         case urlGoogle(String)
@@ -81,7 +81,7 @@ class CarViewController: UIViewController {
 }
 
 //MARK: - Extension WKNavigationDelegate
-extension CarViewController: WKNavigationDelegate, WKUIDelegate {
+extension OLDCarViewController: WKNavigationDelegate, WKUIDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loading.stopAnimating()
     }

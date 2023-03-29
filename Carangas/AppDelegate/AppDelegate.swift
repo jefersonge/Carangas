@@ -15,10 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        window?.tintColor = UIColor(named: "main")
-        
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let navigationController = UINavigationController(rootViewController: CarsListViewController())
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        self.window = window
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

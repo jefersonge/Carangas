@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEditViewController: UIViewController {
+class OLDAddEditViewController: UIViewController {
     
     // MARK: - IBOutlets and Variables
     @IBOutlet weak var tfBrand: UITextField!
@@ -34,10 +34,10 @@ class AddEditViewController: UIViewController {
     // MARK: - Super Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         viewModel.delegate = self
-        setCarExists()
-        setToolbarBrandInput()
+       // setCarExists()
+        //setToolbarBrandInput()
         
     }
     
@@ -98,7 +98,7 @@ class AddEditViewController: UIViewController {
 }
 //MARK: - PickerViewDelegate and DataSource
 
-extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension OLDAddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -115,7 +115,7 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
 }
 
-extension AddEditViewController: AddEditViewModelDelegate{
+extension OLDAddEditViewController: AddEditViewModelDelegate{
     func goBack() {
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)

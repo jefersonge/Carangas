@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol CarsTableViewModelDelegate {
+protocol CarsListViewModelDelegate {
     func loadCarsAndReloadData()
     func deleteRowCar()
 }
 
-class CarsTableViewModel {
+class CarsListViewModel {
     //MARK: - Variables and Constants
     var cars: [Car] = []
-    var delegate: CarsTableViewModelDelegate?
+    var delegate: CarsListViewModelDelegate?
     let service = Service.shared
     
     //MARK: - Load Car List
